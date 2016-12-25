@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon"
+      type="image/png"
+      href="<%= image_path 'logo.png' %>">
+  <title>Mustachio</title>
+
+  <meta name="description" content="<%= meta_description %>">
+  <!-- Facebook Open Graph data -->
+  <meta property="og:title" content="<%= meta_title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:image" content="<%= image_url(meta_image) %>" />
+  <meta property="og:description" content="<%= meta_description %>" />
+  <meta property="fb:app_id" content="FB_ID"/>
+  <meta property="og:site_name" content="<%= meta_title %>" />
+  <!-- Google+ Schema.org markup -->
+  <meta itemprop="name" content="<%= meta_title %>">
+  <meta itemprop="description" content="<%= meta_description %>">
+  <meta itemprop="image" content="<%= image_url(meta_image) %>">
+  <%= csrf_meta_tags %>
+  <!-- Add these line for detecting device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <div id="">
+      <% unless (controller_name == "pages" && action_name == 'home') || (controller_name == "sessions") || (controller_name == "registrations") || (controller_name == "users" && action_name == 'show' )%>
+      <%= render 'shared/navbar' %>
+
+    </div><!-- #header -->
+
+    <div id="content">
+      <div class="nav-offset">
+
+
+        <%= render 'shared/flashes' %>
+
+        <% end %>
+        <%= yield %>
+
+
+      </div>
+    </div><!-- #content -->
+
+    <div id="footer">
+      <% unless controller_name == "pages" && action_name == 'home' || (controller_name == "sessions") || (controller_name == "registrations")  %>
+      <%= render 'shared/footer' %>
+      <% end %>
+    </div><!-- #footer -->
+  </div><!-- #wrapper -->
+</body>
+</html>

@@ -1,0 +1,23 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+  # DEVISE: 'be27cf5a0bd3e6f847dacfdf2d38cb74f4857a734b31ad9fbf81db41926ae733f2db5ef6142149ece611f9d78405524edc8602bccfb9c5683abd57332d78029f'
+
+TMDB_API: "414b35b3ec7445efd69a099f4027c05d"
+#Cloudinary
+CLOUDINARY_URL: "cloudinary://618919935126344:Qe82qRECszuQsHR_sDPRgf604Zg@margot-sylvain"
+# Fb connect keys
+FB_ID: "781142198703826"
+FB_SECRET: "d3186f5b0ce9366222f5077668baa605"
+
+production:
+ FB_ID: "774775452673834"
+ FB_SECRET: "8fb8b4e2767e318cdafffe5463eac986"

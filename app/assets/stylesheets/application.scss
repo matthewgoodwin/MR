@@ -1,0 +1,81 @@
+// Graphical variables
+@import "config/variables";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "chosen";
+
+// Your CSS
+@import "layout/index";
+@import "components/index";
+@import "pages/index";
+@import "vendor/index";
+
+//external css/js plugins
+//@import "plugin"; //name of plug in i.e datetimepicker
+
+
+html,
+body {
+  margin:0;
+  padding:0;
+}
+#wrapper {
+  display: flex;
+  min-height:100vh;
+  flex-direction: column;
+  position:relative;
+}
+#header {
+  // background:#ededed;
+  // padding:10px;
+}
+#content {
+  min-height:600px;
+  flex: 1;
+}
+
+#footer {
+  width:100%;
+  bottom:0;
+  left:0;
+}
+
+.collection-bord{
+  border: 1px solid rgb(255,255,255);
+  box-shadow: 3.5px 3.5px 9px #888888;
+}
+
+.center-img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-shadow{
+  box-shadow: 3.5px 3.5px 9px #888888;
+}
+
+.user-border{
+  border: 1px solid rgb(255,255,255);
+  padding: 10px;
+}
+
+a{
+  color: #383838;
+}
+
+a:hover{
+  color: #383838;
+  text-decoration: underline;
+}
+
+a:focus{
+  color: #85EBBC;
+  text-decoration: underline;
+}
+

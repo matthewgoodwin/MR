@@ -1,0 +1,40 @@
+// Your footer style
+.footer {
+  color: #999;
+  font-size: 12px;
+  padding-top: 10px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+}
+
+.footer-wrapper {
+  background-color: #333;
+  // margin: 0 0 0;
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+      margin-top: 20px;
+}
+
+.footer-left {
+  text-align: left;
+  //position: absolute;
+}
+
+.footer-right {
+  text-align: right;
+  //position: relative;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #999;
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: #eee;
+}
+
+

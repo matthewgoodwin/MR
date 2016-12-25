@@ -1,0 +1,57 @@
+<!-- <style type="text/css"> *{ border: 1px solid red !important;} </style> -->
+<div class="container" style='padding-top:80px;'>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+
+    <%=render 'friendships/menus'%>
+
+     <%= link_to friendship_path(@friend), class: "friend-card" do %>
+        <% avatar_url = @friend.facebook_picture_url || @friend.photo %>
+          <div class="user-avatar" style="background-image: url('<%= image_path avatar_url %>'); background-size: cover; width: 50px; height: 50px; border-radius: 50%; background-position: center;"></div>
+         <h3><%= @friend.username%></h3>
+         <span>
+         <span style="padding-right: 5px;"><%=pluralize(@friend.collections.size, 'Movie')%></span>
+         <span><%=pluralize(@friend.tags.distinct.count, 'List')%></span>
+       </span>
+     <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @friend.collections.each do |collect| %>
+      <div class="col-xs-12 col-sm-3">
+        <div class="friend-movie" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 30%),url('<%= image_path(collect.movie.photo_url) %>');">
+          <div class="add-to-collection">
+            <%= simple_form_for Collection.new, path: collections_path do |f| %>
+              <%= f.hidden_field :movie_id, value: collect.movie_id %>
+              <%= f.submit "Save to my collection", class: "btn center-img"%>
+            <% end %>
+          </div>
+        </div>
+
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if false %>
+  <div class="friend-content-div">
+  <% @movie_id = collect.movie_id %>
+  <% @movie_id.to_s %>
+<!--insert add to tags form from readMe file-->
+    <% current_user.tags.distinct.each do |tag| %>
+      <%= simple_form_for TagCollection.new, path: tag_collections_path do |f| %>
+        <%= f.hidden_field :tag_id, value: tag.id %>
+        <%= f.hidden_field :collection_id, value: current_user.collections.find_by({movie_id: @movie_id}).to_s%>
+        <p class="center">Add to <%= tag.name  %></p>
+        <%= f.submit "+", class: "btn add-to-col center-img"%>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

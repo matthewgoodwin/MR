@@ -1,0 +1,34 @@
+
+
+.btn-form{
+  background: #85EBBC;
+  border: 3px solid #85EBBC;
+  padding: 10px 25px ;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #383838;
+}
+
+
+.btn-form:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+.review-form{
+  flex: 0 1 300px;
+  display: flex;
+  text-align: start;
+  margin: 20px;
+}
+.review-tiny{
+  width: 50px;
+  color: #383838;
+}
+.review{
+  flex: 1 1 auto;
+  margin-left: 5px;
+  color: #383838;
+}
